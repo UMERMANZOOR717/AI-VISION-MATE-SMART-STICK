@@ -1,10 +1,10 @@
 
   Computer Vision Research Notes
-  Safia Naz -- Software and Computer Vision Researcher
+  Safia Naz  Software and Computer Vision Researcher
   BSCS Final Year Design Project 2026
   
   Pi Camera V2 NoIR Specifications
-  --------------------------------
+
   Sensor: Sony IMX219 8 megapixel
   Horizontal field of view: 62.2 degrees
   Vertical field of view: 48.8 degrees
@@ -23,7 +23,7 @@
   With an IR LED it can detect objects in complete darkness.
   
   Object Detection Range by Category
-  -----------------------------------
+
   Person (full body)   30cm to 8-10 meters
   Human face           20cm to 4-5 meters
   Car                  1m   to 15-20 meters
@@ -33,13 +33,13 @@
   Stairs               50cm to 4-5 meters
   
   Camera to Sensor Coverage Comparison
-  -------------------------------------
+  
   Camera horizontal coverage: 62.2 degrees
   Three sensors combined coverage: 45 degrees
   Both systems cover the left, center, and right zones.
   
   Object Position Detection
-  -------------------------
+  
   Each YOLO bounding box provides center X coordinate.
   Camera frame width is 320 pixels.
   X less than 106 pixels: object is on the left
@@ -50,7 +50,7 @@
   Right sensor distance for right zone objects.
   
   Web Stream Implementation
-  -------------------------
+
   Flask web server runs on port 8080.
   MJPEG stream: multipart/x-mixed-replace boundary format.
   Phone browser opens http://192.168.100.200:8080 to view.
