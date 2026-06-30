@@ -1,0 +1,45 @@
+  Voice and Bluetooth System Notes
+  Noor Fatima — Software and Voice System Developer
+  BSCS Final Year Design Project 2026
+  
+  Text to Speech Engine
+  ---------------------
+  We use espeak for voice output. It works completely offline
+  and runs on any Linux system without any API or internet.
+  Speed 162 words per minute is used for detection messages.
+  Speed 145 is used for startup and button messages.
+  
+  Two voice functions are used:
+  say() -- blocking, used for startup announcements
+  speak() -- non-blocking thread, used during detection
+  A threading.Lock called voice_lock prevents two voices
+  from playing at the same time and causing overlap.
+  
+  Bluetooth System
+  ----------------
+  On startup the system tries to connect to the saved MAC
+  address stored in bt_mac.txt. If that fails it scans for
+  12 seconds and tries each found device. The first device
+  that connects successfully has its MAC saved for next time.
+  
+  A watchdog thread checks the Bluetooth connection every
+  15 seconds. If the audio sink disappears it reconnects
+  automatically without any user action.
+  
+  Volume is maintained at 100 percent every 10 seconds
+  using pactl and amixer commands to prevent auto-reduction.
+Button Logic
+  ------------
+  GPIO3 with internal pull-up resistor.
+  Press once while running: Sleep mode -- detection pauses
+  Press once while sleeping: Wake up -- detection resumes
+  Press twice within 1.2 seconds: Safe shutdown
+  
+  Distance to Speech Conversion
+  ------------------------------
+  Raw sensor cm values converted to natural speech:
+    60cm  -->  60 centimeters
+    80cm  -->  80 centimeters
+   150cm  -->  1.5 meters
+   200cm  -->  2 meters
+   350cm  -->  3.5 meters
