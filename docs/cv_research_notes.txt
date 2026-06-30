@@ -1,0 +1,61 @@
+
+  Computer Vision Research Notes
+  Safia Naz -- Software and Computer Vision Researcher
+  BSCS Final Year Design Project 2026
+  
+  Pi Camera V2 NoIR Specifications
+  --------------------------------
+  Sensor: Sony IMX219 8 megapixel
+  Horizontal field of view: 62.2 degrees
+  Vertical field of view: 48.8 degrees
+  Diagonal field of view: 73 degrees
+  Minimum focus distance: approximately 10cm
+  Maximum focus distance: infinity
+  IR filter: None (NoIR = No Infrared filter)
+  Native resolution: 3280 x 2464 pixels
+  Project resolution: 320 x 240 pixels for speed
+  
+  Why NoIR was selected over standard Pi Camera V2:
+  The standard version has an infrared filter that blocks IR light.
+  Visually impaired users walk in various lighting conditions including
+  dim corridors and evening environments. The NoIR sensor receives
+  both visible and infrared light, performing better in low light.
+  With an IR LED it can detect objects in complete darkness.
+  
+  Object Detection Range by Category
+  -----------------------------------
+  Person (full body)   30cm to 8-10 meters
+  Human face           20cm to 4-5 meters
+  Car                  1m   to 15-20 meters
+  Truck or Bus         2m   to 30+ meters
+  Chair                30cm to 4-5 meters
+  Dog                  30cm to 5-6 meters
+  Stairs               50cm to 4-5 meters
+  
+  Camera to Sensor Coverage Comparison
+  -------------------------------------
+  Camera horizontal coverage: 62.2 degrees
+  Three sensors combined coverage: 45 degrees
+  Both systems cover the left, center, and right zones.
+  
+  Object Position Detection
+  -------------------------
+  Each YOLO bounding box provides center X coordinate.
+  Camera frame width is 320 pixels.
+  X less than 106 pixels: object is on the left
+  X between 106 and 213 pixels: object is in front
+  X greater than 213 pixels: object is on the right
+  Left sensor distance is used for left zone objects.
+  Center sensor distance for center zone objects.
+  Right sensor distance for right zone objects.
+  
+  Web Stream Implementation
+  -------------------------
+  Flask web server runs on port 8080.
+  MJPEG stream: multipart/x-mixed-replace boundary format.
+  Phone browser opens http://192.168.100.200:8080 to view.
+  Green bounding boxes: safe objects.
+  Red bounding boxes: danger objects.
+  FPS and sensor readings shown at top of frame.
+  Stream works on any browser on same WiFi network.
+  No app required, no internet required.
