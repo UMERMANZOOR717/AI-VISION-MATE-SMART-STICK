@@ -1,0 +1,7 @@
+ *.onnx
+  *.pt
+  *.pyc
+  __pycache__/
+  bt_mac.txt
+  *.log
+  *.jpg
