@@ -1,0 +1,7 @@
+  ultralytics
+  onnxruntime
+  onnx
+  onnxslim
+  flask
+  numpy
+  opencv-python
