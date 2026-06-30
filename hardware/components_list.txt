@@ -1,0 +1,21 @@
+  AI Vision Mate Smart Stick — Component List
+  Mustafa Rehman — Embedded System Developer
+  BSCS Final Year Design Project 2026
+  
+  Component                  Qty    Approx Price PKR
+  Raspberry Pi 5 (4GB)        1      23000 to 30000
+  Pi Camera V2 NoIR           1      3000 to  5000
+  HC-SR04 Ultrasonic Sensor   3      200 each = 600
+  Push Button (momentary)     1      20 to 50
+  1K ohm resistors            3      5 each = 15
+  2.2K ohm resistors          3      5 each = 15
+  Jumper wires pack           1      200 to 400
+  Power Bank 20000mAh         1      2500 to 3000
+  MicroSD Card 32GB           1      1500 to 5000
+  Stick Housing               1      1000 to 1500
+  
+  Total estimated cost: PKR 38000 to 43000
+  (not including earphones)
+  
+  All hardware purchased locally from Karachi only Pi from Islamabad
+  Sensors wired without breadboard using direct wire method because of space issue
