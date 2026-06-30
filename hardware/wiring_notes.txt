@@ -1,0 +1,33 @@
+  AI Vision Mate Smart Stick Hardware Wiring Notes
+  Mustafa Rehman — Embedded System Developer
+  BSCS Final Year Design Project 2026
+  
+  Why a Voltage Divider is Needed
+  --------------------------------
+  The HC-SR04 ECHO pin outputs 5V. The Raspberry Pi 5 GPIO
+  pins accept a maximum of 3.3V. Connecting 5V directly would
+  damage the Pi. A 1K and 2.2K resistor divider reduces 5V
+  to approximately 3.4V which is safe for the Pi GPIO input.
+  
+  CENTER SENSOR  (GPIO17 / GPIO27)
+  VCC  -- Red wire    -- Pi Pin 2  (5V)
+  GND  -- Black wire  -- Pi Pin 6  (GND)
+  TRIG -- Yellow wire -- Pi Pin 11 (GPIO17) direct connection
+  ECHO -- Orange wire -- 1K resistor -- junction point
+         Junction     -- Pi Pin 13  (GPIO27) green wire
+         Junction     -- 2.2K resistor -- Pi Pin 9 (GND)
+  Mounted straight ahead at 0 degrees
+  
+  LEFT SENSOR  (GPIO23 / GPIO24)
+  VCC  -- Red wire    -- Pi Pin 2  (5V shared)
+  GND  -- Black wire  -- Pi Pin 20 (GND)
+  TRIG -- Yellow wire -- Pi Pin 16 (GPIO23) direct connection
+  ECHO -- Orange wire -- 1K resistor -- junction point
+         Junction     -- Pi Pin 18  (GPIO24) green wire
+         Junction     -- 2.2K resistor -- Pi Pin 20 (GND)
+  Mounted tilted 15 degrees to the left
+  
+  RIGHT SENSOR  (GPIO5 / GPIO6)
+  VCC  -- Red wire    -- Pi Pin 2  (5V shared)
+  GND  -- Black wire  -- Pi Pin 25 (GND)
+  TRIG -- Yellow wire -- Pi Pin 29 (GPIO5)  direct connection
