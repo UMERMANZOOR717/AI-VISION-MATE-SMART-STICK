@@ -31,3 +31,21 @@
   VCC  -- Red wire    -- Pi Pin 2  (5V shared)
   GND  -- Black wire  -- Pi Pin 25 (GND)
   TRIG -- Yellow wire -- Pi Pin 29 (GPIO5)  direct connection
+  ECHO -- Orange wire -- 1K resistor -- junction point
+         Junction     -- Pi Pin 31  (GPIO6) green wire
+         Junction     -- 2.2K resistor -- Pi Pin 25 (GND)
+  Mounted tilted 15 degrees to the right
+  
+  PUSH BUTTON
+  Leg 1 -- Pi Pin 5  (GPIO3)
+  Leg 2 -- Pi Pin 14 (GND)
+  No external resistor needed -- Pi has internal pull-up
+  
+  Three sensors together cover 45 degrees total.
+  Each sensor individually covers 15 degrees.
+  Camera field of view is 62 degrees horizontal.
+  
+  All three red VCC wires are twisted together at Pi Pin 2.
+  Each sensor has its own separate voltage divider.
+  Sensors fire one at a time to avoid echo crosstalk.
+
