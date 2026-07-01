@@ -1,4 +1,4 @@
-  AI Vision Mate Smart Stick — Component List
+  AI Vision Mate Smart Stick — Assembly Component List
   Mustafa Rehman — Embedded System Developer
   BSCS Final Year Design Project 2026
   
