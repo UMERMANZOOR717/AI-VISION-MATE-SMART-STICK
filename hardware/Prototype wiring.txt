@@ -3,7 +3,7 @@
   BSCS Final Year Design Project 2026
   
   Why a Voltage Divider is Needed
-  --------------------------------
+  
   The HC-SR04 ECHO pin outputs 5V. The Raspberry Pi 5 GPIO
   pins accept a maximum of 3.3V. Connecting 5V directly would
   damage the Pi. A 1K and 2.2K resistor divider reduces 5V
@@ -32,8 +32,8 @@
   GND  -- Black wire  -- Pi Pin 25 (GND)
   TRIG -- Yellow wire -- Pi Pin 29 (GPIO5)  direct connection
   ECHO -- Orange wire -- 1K resistor -- junction point
-         Junction     -- Pi Pin 31  (GPIO6) green wire
-         Junction     -- 2.2K resistor -- Pi Pin 25 (GND)
+          Junction     -- Pi Pin 31  (GPIO6) green wire
+          Junction     -- 2.2K resistor -- Pi Pin 25 (GND)
   Mounted tilted 15 degrees to the right
   
   PUSH BUTTON
